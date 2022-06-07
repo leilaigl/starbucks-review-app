@@ -1,0 +1,43 @@
+<ion-header [translucent]="false">
+  <ion-toolbar color="primary">
+    <ion-title mode="md" class="ion-text-center">
+      Starbucks™ Drink Review
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header></ion-header>
+  <ion-button expand=block fill=outline href='/search'>
+    <ion-icon name="search"></ion-icon>
+    Search for a drink
+  </ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      Average Rating of Each Drink
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor='let item of itemListData1'>
+    <ion-card-header>
+      <ion-item>
+      <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <h2><strong>Drink: </strong>{{item.drink}}</h2>
+      <h2><strong>Blend: </strong>{{item.blend}}</h2>
+      <h2><strong>Rating: </strong>{{item.rate}}</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button href='/write-review'>
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

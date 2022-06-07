@@ -1,0 +1,31 @@
+<ion-header [translucent]="false">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title mode="ios" class="ion-text-center">
+      Search
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar 
+    placeholder='Search for a drink' 
+    showClearButton="focus"
+    [(ngModel)]="nameSearch"
+    (search)="ionViewDidEnter()"></ion-searchbar>
+
+  <ion-card *ngFor='let item of itemListData'>
+    <ion-card-header>
+      <ion-item>
+      <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <h2><strong>Drink: </strong>{{item.drink}}</h2>
+      <h2><strong>Blend: </strong>{{item.blend}}</h2>
+      <h2><strong>Rating: </strong>{{item.rate}}</h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

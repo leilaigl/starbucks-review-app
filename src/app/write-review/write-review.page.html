@@ -1,0 +1,56 @@
+<ion-header [translucent]="false">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title mode="ios" class="ion-text-center">
+      Write Review
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header></ion-header>
+
+    <ion-card><ion-input 
+      [(ngModel)]="name" 
+      expand="block" 
+      placeholder="     Name " 
+      required="True">
+    </ion-input></ion-card>
+    <ion-card><ion-input 
+      [(ngModel)]="drinkInput" 
+      expand="block" 
+      placeholder="     Drink" 
+      required="True">
+    </ion-input></ion-card>
+    <ion-card><ion-input 
+      [(ngModel)]="price" 
+      expand="block" 
+      placeholder="     Price" 
+      required="True" 
+      inputmode="numeric">
+    </ion-input></ion-card>
+
+    <ion-card>
+      <ion-select [(ngModel)]="rate" interface="popover" placeholder="Rating" multiple="false">
+        <ion-select-option value="5">5 stars</ion-select-option>
+        <ion-select-option value="4">4 stars</ion-select-option>
+        <ion-select-option value="3">3 stars</ion-select-option>
+        <ion-select-option value="2">2 stars</ion-select-option>
+        <ion-select-option value="1">1 star </ion-select-option>
+      </ion-select>
+    </ion-card>
+
+    <ion-card>
+      <ion-select [(ngModel)]="blend" interface="popover" placeholder="Blend" multiple="false">
+        <ion-select-option value="iced">Iced</ion-select-option>
+        <ion-select-option value="hot">Hot</ion-select-option>
+        <ion-select-option value="frappe">Frappe</ion-select-option>
+      </ion-select>
+    </ion-card>
+
+    <ion-button (click)="ionForm()" expand="block">
+      Submit Review
+    </ion-button>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "starbucksApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
